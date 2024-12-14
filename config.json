@@ -34,12 +34,17 @@
     "auth": false,
     "auth_username": "",
     "auth_password": "",
-    "timezone": "Europe/Berlin",
+    "timezone": "America/Chicago",
     "protocol": "http",
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
     "env_vars_list": [
-      "WEBHOOK_URL: http://localhost:5678"
+      "WEBHOOK_URL: http://localhost:5678",
+      "NODE_FUNCTION_ALLOW_EXTERNAL: lodash,moment",
+      "N8N_REINSTALL_MISSING_PACKAGES: true",
+      "N8N_HIRING_BANNER_ENABLED: false",
+      "N8N_PERSONALIZATION_ENABLED: false",
+      "NODE_FUNCTION_ALLOW_BUILTIN: *"
     ],
     "cmd_line_args": ""
   },
