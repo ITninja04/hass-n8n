@@ -1,0 +1,59 @@
+{
+  "name": "Hass n8n",
+  "version": "1.0.50",
+  "slug": "hass-n8n",
+  "description": "Self host your n8n instance",
+  "url": "https://github.com/ITninja04/hass-n8n",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
+  "startup": "application",
+  "boot": "auto",
+  "icon": "ico.png",
+  "logo": "ico.png",
+  "webui": "http://[HOST]:[PORT:5678]/",
+  "map": [
+    "ssl:ro",
+    "backup:rw",
+    "share:rw",
+    "media:rw",
+    "config:ro"
+  ],
+  "apparmor": true,
+  "ports": {
+    "5678/tcp": 5678
+  },
+  "ports_description": {
+    "5678/tcp": "n8n Web interface"
+  },
+  "options": {
+    "auth": false,
+    "auth_username": "",
+    "auth_password": "",
+    "timezone": "Europe/Berlin",
+    "protocol": "http",
+    "certfile": "fullchain.pem",
+    "keyfile": "privkey.pem",
+    "env_vars_list": [
+      "WEBHOOK_URL: http://localhost:5678"
+    ],
+    "cmd_line_args": ""
+  },
+  "schema": {
+    "auth": "bool",
+    "auth_username": "str?",
+    "auth_password": "str?",
+    "timezone": "str",
+    "protocol": "str",
+    "certfile": "str",
+    "keyfile": "str",
+    "env_vars_list": [
+      "match(^[A-Z_0-9]+: .*$)"
+    ],
+    "cmd_line_args": "str?"
+  }
+}
